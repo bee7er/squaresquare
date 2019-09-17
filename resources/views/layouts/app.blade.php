@@ -15,7 +15,7 @@
     @show
         <meta property="og:title" content="Russ Etheridge">
         <meta property="og:image" content="http://www.squaresquare.tv/public/img/thumbs/armstrong_hv.png">
-        <meta property="og:description" content="Russ Etheridge is an Animator, Director and Designer. Please get in touch for more info and availability!">
+        <meta property="og:description" content="Russ Etheridge is a freelance Animator, Director and Designer. Please get in touch for more info and availability!">
 
 		<link href="{{ asset('css/site.css') }}" rel="stylesheet">
         <script src="{{ asset('js/site.js?v3') }}"></script>
