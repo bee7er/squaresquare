@@ -54,7 +54,7 @@
         </div>
     </div>
 
-    @if($loggedIn && count($notices)>0)
+    @if(count($notices)>0)
         <div id="press" class="panel-title">press</div>
         <div>
             <div class="row press-row-container press-adjust-div">
