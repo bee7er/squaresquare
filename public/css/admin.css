@@ -15,6 +15,11 @@ html {
 
 body {
   margin: 0;
+  font-family: "Muli-ExtraBold", "Verdana", sans-serif !important;
+}
+
+span {
+  font-family: "Muli-ExtraBold", "Verdana", sans-serif !important;
 }
 
 article,
