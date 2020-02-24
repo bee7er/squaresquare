@@ -55,9 +55,8 @@
     </div>
 
     @if(count($notices)>0)
-        <div id="press" class="panel-title">press</div>
-        <div>
-            <div class="row press-row-container press-adjust-div">
+        <div id="blog" class="panel-title">blog</div>
+            <div class="row press-row-container press-adjust-div" style="max-width: 70%;">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <ul class="press-adjust-ul">
                         @foreach($notices as $notice)
@@ -70,7 +69,6 @@
                     </ul>
                 </div>
             </div>
-        </div>
         <div class="go-top" onclick="scrollToAnchor('top');">
             <div id="goTopHand-press" class="bodymovin-hand" onmouseover="startBodymovinHand(PRESS);"
                  onmouseout="stopBodymovinHand(PRESS);">

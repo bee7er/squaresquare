@@ -42,6 +42,7 @@ class NoticeController extends AdminController
     /**
      * Store a newly created notice in storage.
      *
+     * @param NoticeRequest $request
      * @return Response
      */
     public function store(NoticeRequest $request)
@@ -59,8 +60,10 @@ class NoticeController extends AdminController
     /**
      * Update the specified notice in storage.
      *
-     * @param  int $id
+     * @param NoticeRequest $request
+     * @param Notice $notice
      * @return Response
+     * @internal param int $id
      */
     public function update(NoticeRequest $request, Notice $notice)
     {
@@ -97,7 +100,8 @@ class NoticeController extends AdminController
      */
     public function getNotices()
     {
-        return Notice::get()
+        return Notice::orderBy('seq', 'ASC')
+            ->get()
             ->map(function ($notice) {
                 return [
                     'id' => $notice->id,
