@@ -10,10 +10,9 @@
                 @foreach($resources as $resource)
                     <div onclick="document.location='{{url($resource->name .'')}}';">
                         <img id="{!! $resource->id !!}" class="work-image col-xs-12 col-sm-6 col-md-6 col-lg-4"
-                             onmouseover="this.src='{!! url('img/thumbs/'.$resource->hover) !!}'"
-                             onmouseout="this.src='{!! url('img/thumbs/'.$resource->thumb) !!}'"
-                             src="{!! url('img/thumbs/'.$resource->thumb) !!}" title="" alt="{!!
-                             $resource->name !!}">
+                             onmouseover="this.src='{!! $resource->hover !!}'"
+                             onmouseout="this.src='{!! $resource->thumb !!}'"
+                             src="{!! $resource->thumb !!}" title="" alt="{!! $resource->name !!}">
                     </div>
                 @endforeach
             </div>
@@ -25,9 +24,10 @@
         </div>
     @endif
 
+    <!-- removed 20200222
     <div class="row fish-tank-row-container" style="padding:0;">
         <div id="bodymovin" class="bodymovin-fishtank col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
-    </div>
+    </div>-->
 
     <div id="about" class="panel-title">about</div>
     <div id="about-row-container" class="row about-row-container" style="padding:0;">
@@ -112,8 +112,8 @@
         {{-- Preload images --}}
         <div style="visibility: hidden;">
             @foreach($resources as $resource)
-                <img src="{!! url('img/thumbs/'.$resource->thumb) !!}" class="hidden-preload">
-                <img src="{!! url('img/thumbs/'.$resource->hover) !!}" class="hidden-preload">
+                <img src="{!! $resource->thumb !!}" class="hidden-preload">
+                <img src="{!! $resource->hover !!}" class="hidden-preload">
             @endforeach
         </div>
     @endif

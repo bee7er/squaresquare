@@ -8,9 +8,9 @@
 </ul>
 <!-- ./ tabs -->
 @if (isset($resource))
-{!! Form::model($resource, array('url' => url('admin/resource') . '/' . $resource->id, 'method' => 'put','id'=>'fupload','class' => 'bf', 'files'=> true)) !!}
+{!! Form::model($resource, array('url' => url('admin/resource') . '/' . $resource->id, 'method' => 'put','class' => 'bf')) !!}
 @else
-{!! Form::open(array('url' => url('admin/resource'), 'method' => 'post', 'class' => 'bf','id'=>'fupload', 'files'=> true)) !!}
+{!! Form::open(array('url' => url('admin/resource'), 'method' => 'post', 'class' => 'bf')) !!}
 @endif
         <!-- Tabs Content -->
 <div class="tab-content">
@@ -42,9 +42,9 @@
             <div class="col-lg-12">
                 <label class="control-label" for="thumb">
                     {{ trans("admin/resource.thumb") }}</label>
-                <input name="thumb" type="file" class="uploader" id="thumb" value="Upload"/>
+                {!! Form::text('thumb', null, array('class' => 'form-control')) !!}
                 @if (isset($resource) && $resource->thumb)
-                    <img src="/appfiles/resource/{{$resource->thumb}}" width="80">
+                    <img src="{{$resource->thumb}}" width="80">
                 @endif
             </div>
         </div>
@@ -52,9 +52,9 @@
             <div class="col-lg-12">
                 <label class="control-label" for="image">
                     {{ trans("admin/resource.image") }}</label>
-                <input name="image" type="file" class="uploader" id="image" value="Upload"/>
+                {!! Form::text('image', null, array('class' => 'form-control')) !!}
                 @if (isset($resource) && $resource->image)
-                    <img src="/appfiles/resource/{{$resource->image}}" width="80">
+                    <img src="{{$resource->image}}" width="80">
                 @endif
             </div>
         </div>
@@ -63,6 +63,21 @@
             <div class="controls">
                 {!! Form::text('url', null, array('class' => 'form-control')) !!}
                 <span class="help-block">{{ $errors->first('url', ':message') }}</span>
+            </div>
+        </div>
+        <div class="form-group  {{ $errors->has('backgroundColor') ? 'has-error' : '' }}">
+            {!! Form::label('backgroundColor', trans("admin/resource.backgroundColor"), array('class' => 'control-label')) !!}
+            <div class="controls">
+                {!! Form::text('backgroundColor', null, array('class' => 'form-control','placeholder' => 'ffffff')) !!}
+                <span class="help-block">{{ $errors->first('backgroundColor', ':message') }}</span>
+            </div>
+        </div>
+        <div class="form-group  {{ $errors->has('creditTitleColor') ? 'has-error' : '' }}">
+            {!! Form::label('creditTitleColor', trans("admin/resource.creditTitleColor"), array('class' => 'control-label')) !!}
+            <div class="controls">
+                {!! Form::text('creditTitleColor', null, array('class' => 'form-control','placeholder' => '000000'))
+                 !!}
+                <span class="help-block">{{ $errors->first('creditTitleColor', ':message') }}</span>
             </div>
         </div>
         <!-- ./ general tab -->

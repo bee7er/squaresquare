@@ -1,14 +1,16 @@
 <?php
 
 return [
-    'create' => 'Create',
-    'edit' => 'Edit',
-    'reset' => 'Reset',
     'cancel' => 'Cancel',
-    'general' => 'General',
-    'title' => 'Title',
-    'new' => 'New',
+    'contents' => 'Contents',
+    'create' => 'Create',
+    'credits' => 'Credits',
     'delete' => 'Delete',
-    'items' => 'Items',
     'delete_message' => 'Did you want to delete this item?',
+    'edit' => 'Edit',
+    'general' => 'General',
+    'items' => 'Items',
+    'new' => 'New',
+    'reset' => 'Reset',
+    'title' => 'Title',
 ];

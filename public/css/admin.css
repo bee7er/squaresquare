@@ -1997,8 +1997,7 @@ pre code {
 }
 
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding: 0 15px 15px 15px;
   margin-right: auto;
   margin-left: auto;
 }

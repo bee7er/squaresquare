@@ -40,7 +40,7 @@ class ResourceController extends AdminController
      */
     public function create()
     {
-        $templates = Template::lists('name', 'id')->toArray();
+        $templates = Template::lists('name', 'id')->sort()->toArray();
         // Show the page
         return view('admin.resource.create_edit', compact('templates'));
     }
@@ -52,19 +52,14 @@ class ResourceController extends AdminController
      */
     public function store(ResourceRequest $request)
     {
-        $resource = new Resource($request->except(['image', 'thumb']));
+        $resource = new Resource($request->all());
 
-        $resource->image = $this->getImage($request, 'image');
-        $resource->thumb = $this->getImage($request, 'thumb');
         $resource->save();
-
-        $this->moveImage($request, 'image', $resource->image);
-        $this->moveImage($request, 'tuhmb', $resource->thumb);
     }
 
     public function edit(Resource $resource)
     {
-        $templates = Template::lists('name', 'id')->toArray();
+        $templates = Template::lists('name', 'id')->sort()->toArray();
 
         return view('admin.resource.create_edit', compact('resource', 'templates'));
     }
@@ -77,12 +72,7 @@ class ResourceController extends AdminController
      */
     public function update(ResourceRequest $request, Resource $resource)
     {
-        $resource->image = $this->getImage($request, 'image', $resource->image);
-        $resource->thumb = $this->getImage($request, 'thumb', $resource->thumb);
-        $resource->update($request->except(['image', 'thumb']));
-
-        $this->moveImage($request, 'image', $resource->image);
-        $this->moveImage($request, 'tuhmb', $resource->thumb);
+        $resource->update($request->all());
     }
 
     /**
@@ -139,6 +129,8 @@ class ResourceController extends AdminController
 
         return Datatables::of($resources)
             ->add_column('actions', '<a href="{{{ url(\'admin/resource/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("admin/modal.edit") }}</a>
+                <a href="{{{ url(\'admin/credit/\' . $id . \'/index\' ) }}}" class="btn btn-success btn-sm iframe"><span class="glyphicon glyphicon-pencil"></span>  {{ trans("admin/modal.credits") }}</a>
+                <a href="{{{ url(\'admin/content/\' . $id . \'/index\' ) }}}" class="btn btn-success btn-sm iframe"><span class="glyphicon glyphicon-pencil"></span>  {{ trans("admin/modal.contents") }}</a>
                 <a href="{{{ url(\'admin/resource/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("admin/modal.delete") }}</a>
                 <input type="hidden" name="row" value="{{$id}}" id="row">')
             ->remove_column('id')

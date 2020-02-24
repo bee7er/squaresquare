@@ -59,6 +59,20 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::get('notice/{notice}/edit', 'Admin\NoticeController@edit');
     Route::get('notice/{notice}/delete', 'Admin\NoticeController@delete');
     Route::resource('notice', 'Admin\NoticeController');
+    # Credits
+    Route::get('credit/{resource}/index', 'Admin\CreditController@index');
+    Route::get('credit/{id}/edit', 'Admin\CreditController@edit');
+    Route::get('credit/{id}/delete', 'Admin\CreditController@delete');
+    Route::get('credit/{id}/destroy', 'Admin\CreditController@destroy');
+    Route::get('credit/data', 'Admin\CreditController@data');
+    Route::resource('credit', 'Admin\CreditController');
+    # Contents
+    Route::get('content/{resource}/index', 'Admin\ContentController@index');
+    Route::get('content/{id}/edit', 'Admin\ContentController@edit');
+    Route::get('content/{id}/delete', 'Admin\ContentController@delete');
+    Route::get('content/{id}/destroy', 'Admin\ContentController@destroy');
+    Route::get('content/data', 'Admin\ContentController@data');
+    Route::resource('content', 'Admin\ContentController');
 
     # Users
     Route::get('user/data', 'Admin\UserController@data');

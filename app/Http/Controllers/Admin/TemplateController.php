@@ -143,7 +143,8 @@ class TemplateController extends AdminController
      */
     public function getTemplates()
     {
-        return Template::get()
+        return Template::orderBy('name')
+            ->get()
             ->map(function ($template) {
                 return [
                     'id' => $template->id,

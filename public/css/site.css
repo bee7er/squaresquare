@@ -20360,6 +20360,10 @@ body {
   margin-top: 50px;
 }
 
+.default-template-sub-container {
+  margin-top: 40px;
+}
+
 .footer-row-container {
   height: 200px;
   width: 100%;

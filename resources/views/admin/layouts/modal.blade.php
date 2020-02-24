@@ -19,7 +19,7 @@
     @yield('styles')
 </head>
 <!-- Container -->
-<div class="container">
+<div class="container" style="padding-bottom: 10px;">
     <div class="page-header">
         &nbsp;
         <div class="pull-right">

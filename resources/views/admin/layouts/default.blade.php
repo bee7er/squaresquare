@@ -20,7 +20,9 @@
 </head>
 <body>
 <div id="wrapper">
-    @include('admin.partials.nav')
+    @if (!isset($noSideBar))
+        @include('admin.partials.nav')
+    @endif
     <div id="page-wrapper">
         @yield('main')
     </div>

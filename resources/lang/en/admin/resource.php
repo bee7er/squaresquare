@@ -8,6 +8,7 @@ return [
     'template' => 'Template',
     'image' => 'Image',
     'thumb' => 'Thumb',
-    'url' => 'Url',
-
+    'url' => 'Video url',
+    'backgroundColor' => 'Background color',
+    'creditTitleColor' => 'Credit title color',
 ];
