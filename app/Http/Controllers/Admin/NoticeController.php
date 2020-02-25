@@ -105,6 +105,7 @@ class NoticeController extends AdminController
             ->map(function ($notice) {
                 return [
                     'id' => $notice->id,
+                    'seq' => $notice->seq,
                     'notice' => $notice->notice,
                     'created_at' => $notice->created_at->format('d/m/Y'),
                 ];
