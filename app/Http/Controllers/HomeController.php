@@ -60,7 +60,10 @@ class HomeController extends Controller
 
 		// Make sure we have an even number of entries, which is a factor of 3
 		$count = $resources->count();
-		$count = (($count % 2) !== 0) ? ($count + 1): $count;
+
+		// Weird.  This next line does not appear to be needed and messes up in fact
+//		$count = (($count % 2) !== 0) ? ($count + 1): $count;
+//		dd('x=' . $count % 3);
 
 		$first = null;
 		$useImage = 0;

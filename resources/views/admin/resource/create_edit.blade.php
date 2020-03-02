@@ -16,6 +16,13 @@
 <div class="tab-content">
     <!-- General tab -->
     <div class="tab-pane active" id="tab-general">
+        <div class="form-group  {{ $errors->has('seq') ? 'has-error' : '' }}">
+            {!! Form::label('Sequence', trans("admin/resource.seq"), array('class' => 'control-label')) !!}
+            <div class="controls">
+                {!! Form::text('seq', null, array('class' => 'form-control')) !!}
+                <span class="help-block">{{ $errors->first('seq', ':message') }}</span>
+            </div>
+        </div>
         <div class="form-group  {{ $errors->has('template_id') ? 'has-error' : '' }}">
             {!! Form::label('template_id', trans("admin/admin.template"), array('class' => 'control-label')) !!}
             <div class="controls">

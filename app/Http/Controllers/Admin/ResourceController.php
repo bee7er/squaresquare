@@ -105,10 +105,12 @@ class ResourceController extends AdminController
      */
     public function getResources()
     {
-        return Resource::get()
+        return Resource::orderBy('seq', 'ASC')
+            ->get()
             ->map(function ($resource) {
                 return [
                     'id' => $resource->id,
+                    'seq' => $resource->seq,
                     'type' => $resource->type,
                     'name' => $resource->name,
                     'description' => $resource->description,

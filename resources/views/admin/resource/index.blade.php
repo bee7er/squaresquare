@@ -22,6 +22,7 @@
     <table id="table" class="table table-striped table-hover">
         <thead>
         <tr>
+            <th>{!! trans("admin/resource.seq") !!}</th>
             <th>{!! trans("admin/resource.type") !!}</th>
             <th>{!! trans("admin/resource.name") !!}</th>
             <th>{!! trans("admin/resource.description") !!}</th>

@@ -3,6 +3,7 @@
 return [
     'resource' => 'Resources',
     'type' =>  'Type',
+    'seq' =>  'Sequence',
     'name' => 'Name',
     'description' => 'Description',
     'template' => 'Template',
