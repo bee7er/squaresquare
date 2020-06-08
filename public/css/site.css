@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');*/
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -15,11 +15,11 @@ html {
 
 body {
   margin: 0;
-  font-family: "Muli-ExtraBold", "Verdana", sans-serif !important;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 span {
-  font-family: "Muli-ExtraBold", "Verdana", sans-serif !important;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 article,
@@ -29,7 +29,6 @@ figcaption,
 figure,
 footer,
 header,
-hgroup,
 main,
 menu,
 nav,
@@ -20167,28 +20166,10 @@ label {
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
 }
-/*!
- * BEE Override styles
- */
-
-@font-face {
-  font-family: "Muli";
-  src: url("../fonts/Muli-Black.ttf");
-}
-
-@font-face {
-  font-family: "Muli-ExtraBold";
-  src: url("../fonts/Muli-ExtraBold.ttf");
-}
-
-@font-face {
-  font-family: "Muli-Regular";
-  src: url("../fonts/Muli-Regular.ttf");
-}
 
 body {
   background-color: #002DFF;
-  font-family: "Muli", "Verdana", sans-serif;
+  font-family: "Roboto Condensed", "Verdana", sans-serif;
   color: #000;
 }
 
@@ -20231,12 +20212,23 @@ body {
 }
 
 .header-block {
-  padding: 0;
-  margin: 0 auto 20px auto;
+  padding: 0 4px 0 4px;
+  margin: 0 auto 14px auto;
   color: #fff;
-  font-size: 2.0em;
-  font-weight: normal;
+  font-size: 2.2em;
+  font-weight: 700 !important;
   text-align: center;
+}
+
+.header-menu-left {
+  text-align: left;
+  float: left;
+  cursor: pointer;
+}
+
+.header-menu-right {
+  text-align: right;
+  float: right;
 }
 
 @media (min-width: 1200px) {
@@ -20288,8 +20280,49 @@ body {
   padding: 0;
 }
 
+.square {
+  padding: 0 15px;
+}
+
+.square-vertical {
+  text-align: center;
+  padding: 0 15px 12px 15px;
+  width: 20%;
+}
+
+.row-container,
+.title-row-container,
+.about-row-container,
+.contact-row-container,
+.blog-row-container,
+.merch-row-container,
+.fish-tank-row-container,
+.footer-row-container,
+.template-row-container,
+.template-credits-row-container {
+  margin: 20px auto 40px auto;
+  border: 10px solid black;
+  padding: 18px;
+  background-color: #002DFF;
+  color: #fff;
+  width: 70%;
+  text-align: center;
+}
+
+.row-container,
+.title-row-container {
+  margin-top: 8px;
+  border: none;
+  padding: 0;
+}
+
+.title-row-container {
+  margin-bottom: -8px;
+}
+
 .logo-menu-container {
-  margin: 20px auto 0 auto;
+  width: 70%;
+  margin: 40px auto 0 auto;
 }
 
 .logo-menu-row {
@@ -20319,46 +20352,18 @@ body {
   width: 40%;
 }
 
-.square {
-  padding: 0 15px;
-}
-
-.square-vertical {
-  text-align: center;
-  padding: 0 15px 12px 15px;
-  width: 20%;
-}
-
-.row-container,
-.about-row-container,
-.contact-row-container,
-.press-row-container,
-.merch-row-container,
-.fish-tank-row-container,
-.footer-row-container,
-.template-row-container,
-.template-credits-row-container {
-  border: 10px solid black;
-  padding: 18px;
-  margin: 20px auto 40px auto;
-  background-color: #fff;
-  width: 70%;
-  text-align: center;
-}
-
 .template-row-container {
-  width: 65%;
   margin-top: 0;
-  padding: 36px;
-  background-color: #fff;
+  padding: 0;
 }
 
 .template-credits-row-container {
   width: 30%;
   margin-top: 0;
   padding: 36px;
-  background-color: #fff;
   text-align: center;
+  background-color: #fff;
+  color: #000;
 }
 
 .template-sub-container {
@@ -20378,6 +20383,8 @@ body {
   border: 0;
   border-top: 10px solid #000;
   font-size: 1.2em;
+  background-color: #fff;
+  color: #000;
 }
 
 .fish-tank-row-container {
@@ -20387,9 +20394,11 @@ body {
 }
 
 .about-row-container {
-  margin-top: 0;
-  padding: 0;
-  background-color: #fff;
+    margin-top: 0;
+    padding: 0;
+    width: 35%;
+    text-align: left;
+    font-size: 20px;
 }
 
 .contact-row-container {
@@ -20397,26 +20406,26 @@ body {
   padding: 20px;
   width: 30%;
   text-align: center;
-  font-family: "Muli-ExtraBold", "Verdana", sans-serif;
   font-size: 1.2em;
+  background-color: #fff;
+  color: #000;
 }
 
-.press-row-container {
+.blog-row-container {
   margin-top: 0;
   padding: 0;
   width: 0;
   text-align: left;
-  font-family: "Muli-ExtraBold", "Verdana", sans-serif;
   font-size: 1.2em;
 }
 
-.press-adjust-div {
+.blog-adjust-div {
   width: fit-content;
   /* To adjust the height as well */
   height: fit-content;
 }
 
-.press-adjust-ul {
+.blog-adjust-ul {
   margin: 28px 40px 28px 52px !important;
   padding: 0;
 }
@@ -20425,16 +20434,14 @@ body {
   margin-top: 0;
   padding: 20px;
   width: 30%;
-  font-family: "Muli-ExtraBold", "Verdana", sans-serif;
   text-align: center;
   font-size: 1.2em;
 }
 
 .video-frame {
-  border: 10px solid black;
   background-color: #000;
   padding: 0;
-  margin: 0 auto -4px auto;
+  margin: 0 auto -5px auto;
   width: 100%;
   height: 350px;
 }
@@ -20445,8 +20452,9 @@ body {
 }
 
 .work-image,
-.details-work-image {
-  border: 18px solid #fff;
+.details-work-image,
+.title-work-image {
+  border: 5px solid #002DFF;
   margin: 0;
   background-color: #000;
   padding: 10px;
@@ -20457,8 +20465,11 @@ body {
   cursor: default;
 }
 
+.title-work-image {
+  margin: 0;
+}
+
 .about-table {
-  font-family: "Muli-ExtraBold", "Verdana", sans-serif;
   font-size: 1.2em;
   background-color: #fff;
   text-align: justify;
@@ -20483,9 +20494,7 @@ body {
 .about-right-vertical,
 .template-text {
   padding: 20px;
-  font-family: "Muli-ExtraBold", "Verdana", sans-serif;
-  font-size: 1.2em;
-  background-color: #fff;
+  font-size: 1.8em;
   text-align: justify;
   -moz-text-align-last: left;
   /* Code for Firefox */
@@ -20552,12 +20561,10 @@ body {
 }
 
 .template-credits-text {
-  font-family: "Muli-ExtraBold", "Verdana", sans-serif;
   margin: 0;
 }
 
 .template-credits-label {
-  font-family: "Muli-Regular", "Verdana", sans-serif;
   font-weight: bold;
   color: #FF0076;
   margin: 0;
@@ -20610,11 +20617,20 @@ body {
 
 .about-text {
   padding: 20px;
+  font-size: 1.2em;
+}
+
+.blog-text {
+  font-size: 1.4em;
+}
+
+.contact-text {
+  font-size: 1.4em;
 }
 
 .headshot {
-  margin-left: 35%;
-  width: 30%;
+    width: 100%;
+    border-bottom: 10px solid black;
 }
 
 #home {
@@ -20626,16 +20642,20 @@ body {
 
 @media (max-width: 1200px) {
   .row-container,
+  .title-row-container,
+  .logo-menu-container,
   .about-row-container,
   .fish-tank-row-container,
   .template-row-container {
-    padding: 9px;
+    padding: 0;
     width: 80%;
   }
 }
 
 @media (max-width: 768px) {
   .row-container,
+  .title-row-container,
+  .logo-menu-container,
   .about-row-container,
   .fish-tank-row-container,
   .template-row-container {
@@ -20643,13 +20663,9 @@ body {
     width: 90%;
   }
 
-  .about-text {
-    padding: 0;
-  }
-
   .contact-row-container,
   .merch-row-container,
-  .press-row-container {
+  .blog-row-container {
     width: 70%;
   }
 
@@ -20660,10 +20676,6 @@ body {
   .template-details-title {
     font-size: 32px;
     margin-bottom: 30px;
-  }
-
-  .header-block {
-    margin-bottom: 0;
   }
 
   .logo-menu-row {

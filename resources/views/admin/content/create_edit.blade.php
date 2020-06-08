@@ -53,6 +53,13 @@
                 <span class="help-block">{{ $errors->first('html', ':message') }}</span>
             </div>
         </div>
+        <div class="form-group  {{ $errors->has('other') ? 'has-error' : '' }}">
+            {!! Form::label('Other', trans("admin/content.other"), array('class' => 'control-label')) !!}
+            <div class="controls">
+                {!! Form::text('other', null, array('class' => 'form-control')) !!}
+                <span class="help-block">{{ $errors->first('other', ':message') }}</span>
+            </div>
+        </div>
         <div class="form-group  {{ $errors->has('videoUrl') ? 'has-error' : '' }}">
             {!! Form::label('Video url', trans("admin/content.videoUrl"), array('class' => 'control-label')) !!}
             <div class="controls">

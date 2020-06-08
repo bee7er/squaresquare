@@ -4,6 +4,15 @@
 @section('content')
 
     <div id="home">&nbsp;</div>
+
+    @if(null !== $titleResource)
+        <div class="title-row-container">
+            <div class="row" onclick="document.location='{{url($titleResource->name)}}';">
+                <img id="{!! $titleResource->id !!}" class="title-work-image" onmouseover="this.src='{!! $titleResource->titleHover !!}'" onmouseout="this.src='{!! $titleResource->titleThumb !!}'" src="{!! $titleResource->titleThumb !!}" title="" alt="{!! $titleResource->name !!}" style="width: 100%">
+            </div>
+        </div>
+    @endif
+
     @if(count($resources)>0)
         <div class="row-container">
             <div class="row">
@@ -24,29 +33,10 @@
         </div>
     @endif
 
-    <!-- removed 20200222
-    <div class="row fish-tank-row-container" style="padding:0;">
-        <div id="bodymovin" class="bodymovin-fishtank col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
-    </div>-->
-
     <div id="about" class="panel-title">about</div>
     <div id="about-row-container" class="row about-row-container" style="padding:0;">
-        <table class="hidden-xs hidden-sm col-md-6 col-lg-6 about-table" style="width: 100%;">
-            <tr>
-                <td style="width:50%;vertical-align: top;border-right: 10px solid #000;">
-                    <div id="bodymovinDiver" class="bodymovin-diver"></div>
-                </td>
-                <td style="width:50%;vertical-align: top;border-left: 10px solid #000;">
-                    @include('partials.about-text')
-                </td>
-            </tr>
-        </table>
-        <div class="col-xs-12 col-sm-12 hidden-md hidden-lg about-left-vertical">
-            <div id="bodymovinDiverVertical" class="bodymovin-diver"></div>
-        </div>
-        <div class="col-xs-12 col-sm-12 hidden-md hidden-lg about-right-vertical">
-            @include('partials.about-text')
-        </div>
+        <div><img alt="" src="img/russ_headshot.jpg" class="headshot"></div>
+        @include('partials.about-text')
     </div>
     <div class="go-top" onclick="scrollToAnchor('top');">
         <div id="goTopHand-about" class="bodymovin-hand" onmouseover="startBodymovinHand(ABOUT);"
@@ -56,9 +46,9 @@
 
     @if(count($notices)>0)
         <div id="blog" class="panel-title">blog</div>
-            <div class="row press-row-container press-adjust-div" style="max-width: 70%;">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <ul class="press-adjust-ul">
+            <div class="row blog-row-container blog-adjust-div" style="max-width: 70%;">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 blog-text">
+                    <ul class="blog-adjust-ul">
                         @foreach($notices as $notice)
                             @if($notice->url)
                                 <li><a href="{!! url($notice->url) !!}" class="">{!! $notice->notice !!}</a></li>
@@ -78,7 +68,7 @@
 
     <div id="contact" class="panel-title">contact</div>
     <div class="row contact-row-container">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contact-text">
             <p>Have a project in mind, or just want to say hi?</p>
             <p>I’d love to hear from you!</p>
             <p>
@@ -94,18 +84,6 @@
         </div>
     </div>
 
-    <div id="merch" class="panel-title">merch</div>
-    <div class="row merch-row-container">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <p><img class="work-image col-xs-12 col-sm-12 col-md-12 col-lg-12" src="img/stills/blocks.jpg" title=""></p>
-            <p>Coming soon, and not just a few blocks! Follow me on your favourite social media site for updates.</p>
-        </div>
-    </div>
-    <div class="go-top" onclick="scrollToAnchor('top');">
-        <div id="goTopHand-merch" class="bodymovin-hand" onmouseover="startBodymovinHand(MERCH);"
-             onmouseout="stopBodymovinHand(MERCH);">
-        </div>
-    </div>
     @if(count($resources)>0)
         {{-- Preload images --}}
         <div style="visibility: hidden;">
@@ -123,8 +101,7 @@
         var WORK = 0;
         var ABOUT  = 1;
         var CONTACT = 2;
-        var MERCH = 3;
-        var PRESS = 4;
+        var PRESS = 3;
         $(document).ready( function()
         {
             // Setup the goto top hands and store them in an array
@@ -132,7 +109,6 @@
             handAnims[ABOUT] = createBodymovinHand(document.getElementById('goTopHand-about'));
             handAnims[CONTACT] = createBodymovinHand(document.getElementById('goTopHand-contact'));
             handAnims[PRESS] = createBodymovinHand(document.getElementById('goTopHand-press'));
-            handAnims[MERCH] = createBodymovinHand(document.getElementById('goTopHand-merch'));
         });
     </script>
 @endsection

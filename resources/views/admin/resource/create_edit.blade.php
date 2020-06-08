@@ -45,23 +45,25 @@
                 <span class="help-block">{{ $errors->first('description', ':message') }}</span>
             </div>
         </div>
+        <div class="form-group {{ $errors->has('titleThumb') ? 'error' : '' }}">
+            <div class="col-lg-12">
+                <label class="control-label" for="titleThumb">
+                    {{ trans("admin/resource.titleThumb") }}</label>
+                {!! Form::text('titleThumb', null, array('class' => 'form-control')) !!}
+                <div class="thumb-help">{{ trans("admin/resource.titleThumbHelp") }}</div>
+                @if (isset($resource) && $resource->titleThumb)
+                    <img src="{{$resource->titleThumb}}" width="80">
+                @endif
+            </div>
+        </div>
         <div class="form-group {{ $errors->has('thumb') ? 'error' : '' }}">
             <div class="col-lg-12">
                 <label class="control-label" for="thumb">
                     {{ trans("admin/resource.thumb") }}</label>
                 {!! Form::text('thumb', null, array('class' => 'form-control')) !!}
+                <div class="thumb-help">{{ trans("admin/resource.thumbHelp") }}</div>
                 @if (isset($resource) && $resource->thumb)
                     <img src="{{$resource->thumb}}" width="80">
-                @endif
-            </div>
-        </div>
-        <div class="form-group {{ $errors->has('image') ? 'error' : '' }}">
-            <div class="col-lg-12">
-                <label class="control-label" for="image">
-                    {{ trans("admin/resource.image") }}</label>
-                {!! Form::text('image', null, array('class' => 'form-control')) !!}
-                @if (isset($resource) && $resource->image)
-                    <img src="{{$resource->image}}" width="80">
                 @endif
             </div>
         </div>

@@ -43,6 +43,7 @@ class HomeController extends Controller
 				'resources.id',
 				'resources.name',
 				'resources.description',
+				'resources.titleThumb',
 				'resources.thumb',
 				'resources.url',
 				'resources.type',
@@ -53,26 +54,32 @@ class HomeController extends Controller
 			->orderBy("resources.seq")
 			->limit(999)->get();
 
-		// Derive the hover thumbnail image and add it to the object
-		foreach ($resources as &$resource) {
-			$resource->hover = str_replace('th.', 'hv.', $resource->thumb);
-		}
+		if ($resources->count() > 0) {
+			// Grab the first entry, it is the title entry
+			$titleResource = $resources->shift();
+			if (null == $titleResource->titleThumb) {
+				$titleResource->titleThumb = $titleResource->thumb;
+				$titleResource->titleHover = str_replace('th.', 'hv.', $titleResource->thumb);
+			} else {
+				$titleResource->titleHover = str_replace('tl.', 'tlhv.', $titleResource->titleThumb);
+			}
+			// Derive the hover title image for each remaining entry and add it to the object
+			foreach ($resources as &$resource) {
+				$resource->hover = str_replace('th.', 'hv.', $resource->thumb);
+			}
 
-		// Make sure we have an even number of entries, which is a factor of 3
-		$count = $resources->count();
-
-		// Weird.  This next line does not appear to be needed and messes up in fact
-//		$count = (($count % 2) !== 0) ? ($count + 1): $count;
-//		dd('x=' . $count % 3);
-
-		$first = null;
-		$useImage = 0;
-		while (($count % 3) !== 0) {
-			$use = clone($resources->get($useImage));
-			$use['id'] = (9999 + $useImage);		// Dummy unique id
-			$resources = $resources->merge([$use]);
+			// Make sure we have an even number of entries, which is a factor of 3
 			$count = $resources->count();
-			$useImage++;
+
+			$first = null;
+			$useImage = 0;
+			while (($count % 3) !== 0) {
+				$use = clone($resources->get($useImage));
+				$use['id'] = (9999 + $useImage);        // Dummy unique id
+				$resources = $resources->merge([$use]);
+				$count = $resources->count();
+				$useImage++;
+			}
 		}
 
 		$notices = Notice::select(
@@ -92,7 +99,7 @@ class HomeController extends Controller
 			$loggedIn = true;
 		}
 
-		return view('pages.home', compact('resources', 'notices', 'loggedIn'));
+		return view('pages.home', compact('resources', 'titleResource', 'notices', 'loggedIn'));
 	}
 
 }

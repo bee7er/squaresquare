@@ -20,6 +20,7 @@ Mysql:
 		mysql -uroot -psecret
 		
 	GRANT ALL ON russ_201910.* TO russ@'localhost' IDENTIFIED BY 'Canopy84';
+	GRANT ALL ON russ_20200607.* TO russ@'localhost' IDENTIFIED BY 'Canopy84';
 
 
 

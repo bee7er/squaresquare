@@ -128,6 +128,8 @@ class TemplateHelper
 					$html .= self::generateVideoUrlContents($resource, $content);
 				} elseif ('' !== trim($content->url)) {
 					$html .= self::generateUrlContents($resource, $content);
+				} elseif ('' !== trim($content->other)) {
+					$html .= self::generateOtherContents($resource, $content);
 				} elseif ('' !== trim($content->html)) {
 					$html .= self::generateHtmlContents($resource, $content);
 				}
@@ -142,12 +144,30 @@ class TemplateHelper
 	 * @param Resource $resource
 	 * @return string
 	 */
+	private static function generateOtherContents(Resource $resource, Content $content)
+	{
+		$html = '';
+
+        $html .= trim($content->other);
+
+		return $html;
+	}
+
+	/**
+	 * Generate HTML content entries
+	 *
+	 * @param Resource $resource
+	 * @return string
+	 */
 	private static function generateHtmlContents(Resource $resource, Content $content)
 	{
 		$html = '';
 
         $html .= '<div class="row template-row-container default-template-sub-container"><div
-class="col-xs-12 col-sm-12 col-md-12 col-lg-12 template-text">' . $content->html . '</div></div>';
+class="col-xs-12 col-sm-12 col-md-12 col-lg-12 template-text" style="background-color: #' . $resource->backgroundColor .
+			'">
+' . trim($content->html) .
+	'</div></div>';
 
 		return $html;
 	}
@@ -162,7 +182,7 @@ class="col-xs-12 col-sm-12 col-md-12 col-lg-12 template-text">' . $content->html
 	{
 		$html = '';
 
-        $html .= '<div class="row template-row-container default-template-sub-container"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 template-text"><img src="' . $content->url . '" width="100%">';
+        $html .= '<div class="row template-row-container default-template-sub-container"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><img src="' . $content->url . '" width="100%">';
         // Generate html here if requested
         if ('' !== trim($content->html)) {
             $html .= '<br>' . $content->html;
