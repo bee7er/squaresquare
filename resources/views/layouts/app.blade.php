@@ -29,8 +29,7 @@
     <![endif]-->
     <link rel="shortcut icon" href="http://www.squaresquare.tv/favicon.ico" type="image/x-icon">
     <link rel="icon" href="http://www.squaresquare.tv/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
