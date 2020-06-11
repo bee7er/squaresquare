@@ -17,12 +17,20 @@
         <div class="row-container">
             <div class="row">
                 @foreach($resources as $resource)
-                    <div onclick="document.location='{{url($resource->name .'')}}';">
-                        <img id="{!! $resource->id !!}" class="work-image col-xs-12 col-sm-6 col-md-6 col-lg-4"
-                             onmouseover="this.src='{!! $resource->hover !!}'"
-                             onmouseout="this.src='{!! $resource->thumb !!}'"
-                             src="{!! $resource->thumb !!}" title="" alt="{!! $resource->name !!}">
-                    </div>
+                    {{--@if(16 == $resource->id)--}}
+                        {{--<div onclick="document.location='{{url($resource->name .'')}}';">--}}
+                            {{--<img id="{!! ($resource->id + 77) !!}" class="work-image col-xs-12 col-sm-6 col-md-6 col-lg-4"--}}
+                                 {{--src="img/gifs/blizzard_loop.gif" title="" alt="{!! $resource->name !!}">--}}
+                        {{--</div>--}}
+                    {{--@else--}}
+                        <div onclick="document.location='{{url($resource->name .'')}}';">
+                            <img id="{!! $resource->id !!}" class="work-image col-xs-12 col-sm-6 col-md-6 col-lg-4"
+                                 onmouseover="this.src='{!! $resource->hover !!}'"
+                                 onmouseout="this.src='{!! $resource->thumb !!}'"
+                                 src="{!! $resource->thumb !!}" title="" alt="{!! $resource->name !!}">
+                        </div>
+                    {{--@endif--}}
+
                 @endforeach
             </div>
         </div>
