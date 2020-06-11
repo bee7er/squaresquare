@@ -17,20 +17,23 @@
         <div class="row-container">
             <div class="row">
                 @foreach($resources as $resource)
-                    {{--@if(16 == $resource->id)--}}
-                        {{--<div onclick="document.location='{{url($resource->name .'')}}';">--}}
-                            {{--<img id="{!! ($resource->id + 77) !!}" class="work-image col-xs-12 col-sm-6 col-md-6 col-lg-4"--}}
-                                 {{--src="img/gifs/blizzard_loop.gif" title="" alt="{!! $resource->name !!}">--}}
-                        {{--</div>--}}
-                    {{--@else--}}
+                    @if($resource->video)
+                        <div>
+                            <video class="work-image col-xs-12 col-sm-6 col-md-6 col-lg-4"
+                                   autoplay
+                                   muted loop
+                                   preload="auto">
+                                <source src="{!! $resource->video !!}" type="video/mp4">
+                                Your browser does not support the video tag
+                            </video>
+                        </div>
+                    @else
                         <div onclick="document.location='{{url($resource->name .'')}}';">
                             <img id="{!! $resource->id !!}" class="work-image col-xs-12 col-sm-6 col-md-6 col-lg-4"
-                                 onmouseover="this.src='{!! $resource->hover !!}'"
-                                 onmouseout="this.src='{!! $resource->thumb !!}'"
+                                 {!! $resource->hoverActions !!}
                                  src="{!! $resource->thumb !!}" title="" alt="{!! $resource->name !!}">
                         </div>
-                    {{--@endif--}}
-
+                    @endif
                 @endforeach
             </div>
         </div>

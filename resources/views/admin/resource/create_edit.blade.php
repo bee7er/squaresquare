@@ -67,6 +67,14 @@
                 @endif
             </div>
         </div>
+        <div class="form-group {{ $errors->has('useThumbHover') ? 'error' : '' }}">
+            <div class="col-lg-12">
+                <label class="control-label" for="useThumbHover">
+                    {{ trans("admin/resource.useThumbHover") }}</label>
+                {!! Form::text('useThumbHover', null, array('class' => 'form-control')) !!}
+                <div class="thumb-help">{{ trans("admin/resource.useThumbHoverHelp") }}</div>
+            </div>
+        </div>
         <div class="form-group  {{ $errors->has('url') ? 'has-error' : '' }}">
             {!! Form::label('url', trans("admin/resource.url"), array('class' => 'control-label')) !!}
             <div class="controls">
