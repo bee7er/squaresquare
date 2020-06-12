@@ -18,8 +18,9 @@
             <div class="row">
                 @foreach($resources as $resource)
                     @if($resource->video)
-                        <div>
-                            <video class="work-image col-xs-12 col-sm-6 col-md-6 col-lg-4"
+                        <div {!! $resource->clickAction !!}>
+                            <video class="work-image {!! $resource->clickActionClass !!} col-xs-12 col-sm-6 col-md-6
+                             col-lg-4"
                                    autoplay
                                    muted loop
                                    preload="auto">
@@ -28,8 +29,9 @@
                             </video>
                         </div>
                     @else
-                        <div onclick="document.location='{{url($resource->name .'')}}';">
-                            <img id="{!! $resource->id !!}" class="work-image col-xs-12 col-sm-6 col-md-6 col-lg-4"
+                        <div {!! $resource->clickAction !!}>
+                            <img id="{!! $resource->id !!}" class="work-image {!! $resource->clickActionClass !!}
+                                    col-xs-12 col-sm-6 col-md-6 col-lg-4"
                                  {!! $resource->hoverActions !!}
                                  src="{!! $resource->thumb !!}" title="" alt="{!! $resource->name !!}">
                         </div>

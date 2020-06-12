@@ -70,7 +70,7 @@
                 {!! Form::text('thumb', null, array('class' => 'form-control')) !!}
             </div>
             <div class="thumb-help">{{ trans("admin/resource.thumbHelp") }}</div>
-            @if (isset($resource) && $resource->thumb)
+            @if (isset($resource) && $resource->thumb && false === strpos($resource->thumb, 'mp4'))
                 <img src="{{$resource->thumb}}" width="80">
             @endif
         </div>
@@ -81,6 +81,13 @@
                 {!! Form::text('useThumbHover', null, array('class' => 'form-control')) !!}
             </div>
             <div class="thumb-help">{{ trans("admin/resource.useThumbHoverHelp") }}</div>
+        </div>
+        <div class="form-group {{ $errors->has('isClickable') ? 'error' : '' }}">
+            <label class="control-label" for="isClickable">
+                {{ trans("admin/resource.isClickable") }}</label>
+            <div class="controls">
+                {!! Form::text('isClickable', null, array('class' => 'form-control')) !!}
+            </div>
         </div>
         <div class="form-group  {{ $errors->has('url') ? 'has-error' : '' }}">
             {!! Form::label('url', trans("admin/resource.url"), array('class' => 'control-label')) !!}

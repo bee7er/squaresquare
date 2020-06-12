@@ -46,6 +46,7 @@ class HomeController extends Controller
 				'resources.titleThumb',
 				'resources.thumb',
 				'resources.useThumbHover',
+				'resources.isClickable',
 				'resources.url',
 				'resources.type',
 				'resources.seq',
@@ -74,8 +75,15 @@ class HomeController extends Controller
 						$resource->hover, $resource->thumb);
 				}
 				// Check if the thumb is in fact a video
+				$resource->video = '';
 				if (false !== strpos($resource->thumb, '.mp4')) {
 					$resource->video = $resource->thumb;
+				}
+				// Check if the thumb is clickable
+				$resource->clickAction = $resource->clickActionClass = '';
+				if ($resource->isClickable) {
+					$resource->clickAction = 'onclick="document.location=\'' . url($resource->name) .'\';"';
+					$resource->clickActionClass = 'work-image-clickable';
 				}
 			}
 

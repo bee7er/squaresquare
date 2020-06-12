@@ -20454,11 +20454,11 @@ body {
   margin: 0;
   background-color: #000;
   padding: 10px;
-  cursor: pointer;
 }
 
-.details-work-image {
-  cursor: default;
+.title-work-image,
+.work-image-clickable {
+  cursor: pointer;
 }
 
 .title-work-image {
