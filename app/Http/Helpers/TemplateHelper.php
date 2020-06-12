@@ -69,7 +69,7 @@ class TemplateHelper
 					} else {
                         $resourceValue = trim($resource->$key);
                         if ('' === $resourceValue && isset($attr['default'])) {
-                            // A default is available, se it
+                            // A default is available, use it
                             $resourceValue = $attr['default'];
                         }
 						$container = str_ireplace("#$resource_attr#", $resourceValue, $container);

@@ -20367,8 +20367,6 @@ body {
   margin-top: 0;
   padding: 36px;
   text-align: center;
-  background-color: #fff;
-  color: #000;
 }
 
 .template-sub-container {
@@ -20409,8 +20407,6 @@ body {
   padding: 20px;
   width: 30%;
   text-align: center;
-  background-color: #fff;
-  color: #000;
 }
 
 .blog-row-container {
@@ -20557,16 +20553,11 @@ body {
 .template-credits-text,
 .template-credits-label {
   font-size: 24px;
-}
-
-.template-credits-text {
   margin: 0;
 }
 
 .template-credits-label {
   font-weight: bold;
-  color: #FF0076;
-  margin: 0;
 }
 
 .go-top {

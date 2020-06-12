@@ -12,5 +12,6 @@ return [
     'items' => 'Items',
     'new' => 'New',
     'reset' => 'Reset',
-    'title' => 'Title',
+    'title' => 'Title (external)',
+    'name' => 'Name (internal)',
 ];
