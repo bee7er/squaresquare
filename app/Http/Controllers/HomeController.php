@@ -44,7 +44,9 @@ class HomeController extends Controller
 				'resources.name',
 				'resources.description',
 				'resources.titleThumb',
+				'resources.titleThumbHover',
 				'resources.thumb',
+				'resources.thumbHover',
 				'resources.useThumbHover',
 				'resources.isClickable',
 				'resources.url',
@@ -59,20 +61,13 @@ class HomeController extends Controller
 		if ($resources->count() > 0) {
 			// Grab the first entry, it is the title entry
 			$titleResource = $resources->shift();
-			if (null == $titleResource->titleThumb) {
-				$titleResource->titleThumb = $titleResource->thumb;
-				$titleResource->titleHover = str_replace('th.', 'hv.', $titleResource->thumb);
-			} else {
-				$titleResource->titleHover = str_replace('tl.', 'tlhv.', $titleResource->titleThumb);
-			}
 			// Derive the hover title image for each remaining entry and add it to the object
 			foreach ($resources as &$resource) {
-				$resource->hover = str_replace('th.', 'hv.', $resource->thumb);
 				// If we are to use the hover then generate the necessary HTML
 				$resource->hoverActions = '';
 				if ($resource->useThumbHover) {
 					$resource->hoverActions = sprintf('onmouseover="this.src=\'%s\'" onmouseout="this.src=\'%s\'"',
-						$resource->hover, $resource->thumb);
+						$resource->thumbHover, $resource->thumb);
 				}
 				// Check if the thumb is in fact a video
 				$resource->video = '';

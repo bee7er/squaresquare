@@ -63,6 +63,16 @@
                 <img src="{{$resource->titleThumb}}" width="80">
             @endif
         </div>
+        <div class="form-group {{ $errors->has('titleThumbHover') ? 'error' : '' }}">
+            <label class="control-label" for="titleThumbHover">
+                {{ trans("admin/resource.titleThumbHover") }}</label>
+            <div class="controls">
+                {!! Form::text('titleThumbHover', null, array('class' => 'form-control')) !!}
+            </div>
+            @if (isset($resource) && $resource->titleThumbHover)
+                <img src="{{$resource->titleThumbHover}}" width="80">
+            @endif
+        </div>
         <div class="form-group {{ $errors->has('thumb') ? 'error' : '' }}">
             <label class="control-label" for="thumb">
                 {{ trans("admin/resource.thumb") }}</label>
@@ -72,6 +82,16 @@
             <div class="thumb-help">{{ trans("admin/resource.thumbHelp") }}</div>
             @if (isset($resource) && $resource->thumb && false === strpos($resource->thumb, 'mp4'))
                 <img src="{{$resource->thumb}}" width="80">
+            @endif
+        </div>
+        <div class="form-group {{ $errors->has('thumbHover') ? 'error' : '' }}">
+            <label class="control-label" for="thumbHover">
+                {{ trans("admin/resource.thumbHover") }}</label>
+            <div class="controls">
+                {!! Form::text('thumbHover', null, array('class' => 'form-control')) !!}
+            </div>
+            @if (isset($resource) && $resource->thumbHover && false === strpos($resource->thumbHover, 'mp4'))
+                <img src="{{$resource->thumbHover}}" width="80">
             @endif
         </div>
         <div class="form-group {{ $errors->has('useThumbHover') ? 'error' : '' }}">
