@@ -6,6 +6,7 @@ use Illuminate\Auth\Guard;
 
 use App\Notice;
 use App\Resource;
+use App\Template;
 
 /**
  * Class HomeController
@@ -13,6 +14,8 @@ use App\Resource;
  */
 class HomeController extends Controller
 {
+	const ABOUT_TEMPLATE = '*About';
+
 	/**
 	 * The Guard implementation.
 	 *
@@ -108,12 +111,15 @@ class HomeController extends Controller
 			->orderBy("notices.seq")
 			->limit(999)->get();
 
+		$about = Template::where([ 'name' => self::ABOUT_TEMPLATE, 'deleted_at' => null ])->get()->first();
+		$aboutText = $about->container;
+
 		$loggedIn = false;
 		if ($this->auth->check()) {
 			$loggedIn = true;
 		}
 
-		return view('pages.home', compact('resources', 'titleResource', 'notices', 'loggedIn'));
+		return view('pages.home', compact('resources', 'titleResource', 'aboutText', 'notices', 'loggedIn'));
 	}
 
 }

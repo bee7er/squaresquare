@@ -2,7 +2,7 @@
 
 return [
     'seq' => 'Sequence',
-    'notice' => 'Notices',
+    'notice' => 'Blog Entries',
     'description' => 'Description',
     'url' => 'Url',
 

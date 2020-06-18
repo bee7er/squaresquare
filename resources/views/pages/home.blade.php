@@ -49,7 +49,9 @@
     <div id="about" class="panel-title">about</div>
     <div id="about-row-container" class="row about-row-container" style="padding:0;">
         <div><img alt="" src="img/russ_headshot.jpg" class="headshot"></div>
-        @include('partials.about-text')
+
+        {!! $aboutText !!}
+
     </div>
     <div class="go-top" onclick="scrollToAnchor('top');">
         <div id="goTopHand-about" class="bodymovin-hand" onmouseover="startBodymovinHand(ABOUT);"
