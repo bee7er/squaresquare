@@ -30,8 +30,7 @@ class Admin implements Middleware {
      * @param  ResponseFactory  $response
      * @return void
      */
-    public function __construct(Guard $auth,
-                                ResponseFactory $response)
+    public function __construct(Guard $auth, ResponseFactory $response)
     {
         $this->auth = $auth;
         $this->response = $response;

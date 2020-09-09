@@ -8,6 +8,7 @@ return [
     'action' => 'Actions',
     'back' => 'Back',
     'created_at' => 'Created',
+    'deleted_at' => 'Visibility',
     'language' => 'Language',
     'yes'       => 'Yes',
     'no'        =>  'No',

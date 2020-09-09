@@ -22,4 +22,9 @@ Mysql:
 	GRANT ALL ON russ_201910.* TO russ@'localhost' IDENTIFIED BY 'Canopy84';
 	GRANT ALL ON russ_20200607.* TO russ@'localhost' IDENTIFIED BY 'Canopy84';
 
+# 20200622 Switched on Let's Encrypt and added the https redirect in .htaccess
+# 20200809 There was a delayed redirect to russetheridge.com in the app layout, but Russ
+    requested that it redirect immediately so I placed a 301 in the .htaccess for the site
+
+    Redirect 301 / https://russetheridge.com/
 

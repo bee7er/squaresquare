@@ -29,6 +29,11 @@ Route::controllers([
     'password' => 'Auth\PasswordController',
 ]);
 
+// Override bind function so that we can edit soft-deleted resources
+Route::bind('resource', function ($value) {
+    return App\Resource::withTrashed()->findOrFail($value);
+});
+
 /***************    Admin routes  **********************************/
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
 

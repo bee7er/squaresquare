@@ -131,6 +131,13 @@
                 <span class="help-block">{{ $errors->first('creditTitleColor', ':message') }}</span>
             </div>
         </div>
+        <div class="form-group {{ $errors->has('isHidden') ? 'error' : '' }}">
+            <label class="control-label" for="isHidden">
+                Is the entire resource hidden, 1=Yes, 0=No</label>
+            <div class="controls">
+                <input class="form-control" name="isHidden" type="text" value="{{ $resource->deleted_at ? '1': '0' }}">
+            </div>
+        </div>
         <!-- ./ general tab -->
     </div>
     <!-- ./ tabs content -->

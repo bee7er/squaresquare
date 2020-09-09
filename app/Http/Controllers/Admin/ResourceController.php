@@ -105,7 +105,9 @@ class ResourceController extends AdminController
      */
     public function getResources()
     {
-        return Resource::orderBy('seq', 'ASC')
+        // Including soft-deleted records
+        return Resource::withTrashed()
+            ->orderBy('seq', 'ASC')
             ->get()
             ->map(function ($resource) {
                 return [
@@ -115,6 +117,7 @@ class ResourceController extends AdminController
                     'name' => $resource->name,
                     'description' => $resource->description,
                     'template' => isset($resource->template) ? $resource->template->name : "Unknown",
+                    'deleted_at' => $resource->deleted_at ? 'Hidden': 'Visible',
                     'created_at' => $resource->created_at->format('d/m/Y'),
                 ];
             });

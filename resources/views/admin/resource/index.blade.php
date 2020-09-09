@@ -27,6 +27,7 @@
             <th>{!! trans("admin/resource.name") !!}</th>
             <th>{!! trans("admin/resource.description") !!}</th>
             <th>{!! trans("admin/resource.template") !!}</th>
+            <th>{!! trans("admin/admin.deleted_at") !!}</th>
             <th>{!! trans("admin/admin.created_at") !!}</th>
             <th>{!! trans("admin/admin.action") !!}</th>
         </tr>

@@ -23,4 +23,20 @@ class Resource extends Model
     {
         return $this->belongsTo(Template::class,'template_id');
     }
+
+    /**
+     * Update the model in the database.
+     *
+     * @param  array  $attributes
+     * @return bool|int
+     */
+    public function update(array $attributes = [])
+    {
+        if (isset($attributes['isHidden'])) {
+            $attributes['deleted_at'] = $attributes['isHidden'] ? date('Y-m-d H:i:s'): null;
+            unset($attributes['isHidden']);
+        }
+
+        return parent::update($attributes);
+    }
 }
