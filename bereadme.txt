@@ -11,7 +11,7 @@ To run locally in Chrome:
 
     with betheridge@gmail.com / Cando
 
-Use GIT.
+Use GIT
 
 Mysql:
 
