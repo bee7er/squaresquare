@@ -39,4 +39,20 @@ class Resource extends Model
 
         return parent::update($attributes);
     }
+
+    /**
+     * Save the model to the database.
+     *
+     * @param  array  $options
+     * @return bool
+     */
+    public function save(array $options = [])
+    {
+        if (isset($this->attributes['isHidden'])) {
+            $this->attributes['deleted_at'] = $this->attributes['isHidden'] ? date('Y-m-d H:i:s'): null;
+            unset($this->attributes['isHidden']);
+        }
+
+        return parent::save($options);
+    }
 }

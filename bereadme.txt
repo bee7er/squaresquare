@@ -13,6 +13,9 @@ To run locally in Chrome:
 
 Use GIT
 
+    Setting the remore to use SSH
+    git remote set-url origin git@github.com:bee7er/squaresquare.git
+
 Mysql:
 
     use the vagrant ssh command line:

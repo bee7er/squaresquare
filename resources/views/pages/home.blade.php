@@ -46,19 +46,6 @@
         </div>
     @endif
 
-    <div id="about" class="panel-title">about</div>
-    <div id="about-row-container" class="row about-row-container" style="padding:0;">
-        <div><img alt="" src="img/russ_headshot.jpg" class="headshot"></div>
-
-        {!! $aboutText !!}
-
-    </div>
-    <div class="go-top" onclick="scrollToAnchor('top');">
-        <div id="goTopHand-about" class="bodymovin-hand" onmouseover="startBodymovinHand(ABOUT);"
-             onmouseout="stopBodymovinHand(ABOUT);">
-        </div>
-    </div>
-
     @if(count($notices)>0)
         <div id="blog" class="panel-title">blog</div>
             <div class="row blog-row-container blog-adjust-div" style="max-width: 70%;">
@@ -80,6 +67,19 @@
             </div>
         </div>
     @endif
+    
+    <div id="about" class="panel-title">about</div>
+    <div id="about-row-container" class="row about-row-container" style="padding:0;">
+        <div><img alt="" src="img/russ_headshot.jpg" class="headshot"></div>
+
+        {!! $aboutText !!}
+
+    </div>
+    <div class="go-top" onclick="scrollToAnchor('top');">
+        <div id="goTopHand-about" class="bodymovin-hand" onmouseover="startBodymovinHand(ABOUT);"
+             onmouseout="stopBodymovinHand(ABOUT);">
+        </div>
+    </div>
 
     <div id="contact" class="panel-title">contact</div>
     <div class="row contact-row-container">
@@ -90,7 +90,7 @@
                 <a href="javascript: mail2('contact','russ','etheridge','com')"><img class="col-xs-12 col-sm-12 col-md-12 col-lg-12" src="img/contact3.png" title=""></a>
             </p>
             <p class="center-text">Follow me!</p>
-            <p class="center-text"><a target="_blank" href="https://dribbble.com/russ_ether"><img src="img/social/dribble.png" class="social-icon" title="Share on dribble" /></a><a target="_blank" href="https://www.facebook.com/russether.animation"><img src="img/social/facebook.png" class="social-icon" title="Share on facebook" /></a><a target="_blank" href="https://www.instagram.com/russ_ether/"><img src="img/social/instagram.png" class="social-icon" title="Share on instagram" /></a><br><a target="_blank" href="https://www.linkedin.com/in/russether"><img src="img/social/linkedin.png" class="social-icon" title="Share on linkedin" /></a><a target="_blank" href="https://twitter.com/russ_ether"><img src="img/social/twitter.png" class="social-icon" title="Share on twitter" /></a><a target="_blank" href="https://vimeo.com/russether"><img src="img/social/vimeo.png" class="social-icon" title="Share on vimeo" /></a></p>
+            <p class="center-text"><a target="_blank" href="https://www.instagram.com/russ_ether/"><img src="img/social/instagram.png" class="social-icon" title="Share on instagram" /></a><a target="_blank" href="https://www.linkedin.com/in/russether"><img src="img/social/linkedin.png" class="social-icon" title="Share on linkedin" /></a><a target="_blank" href="https://twitter.com/russ_ether"><img src="img/social/twitter.png" class="social-icon" title="Share on twitter" /></a></p>
         </div>
     </div>
     <div class="go-top" onclick="scrollToAnchor('top');">
