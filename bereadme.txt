@@ -30,5 +30,6 @@ Mysql:
    
     requested that it redirect immediately so I placed a 301 in the .htaccess for the site
 
-    Redirect 301 / https://russetheridge.com/
+    We no longer need this as squaresquare domain has gone
 
+    Redirect 301 / https://russetheridge.com/

@@ -4,4 +4,5 @@
 /node_modules
 .env
 .env_live_config
+.well-known
 composer.lock

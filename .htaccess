@@ -5,5 +5,5 @@ RewriteEngine on
 RewriteCond %{HTTP_HOST} ^russetheridge.com$ [NC,OR]
 RewriteCond %{HTTP_HOST} ^www.russetheridge.com$
 RewriteCond %{REQUEST_URI} !public/
-RewriteRule (.*) https://russetheridge.com/public/$1 [L]
+RewriteRule (.*) http://russetheridge.com/public/$1 [L]
 AddType x-httpd-php72 .php
