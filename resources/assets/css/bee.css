@@ -329,6 +329,16 @@ body {
     top: -20000px;
     width: 1px;
 }
+.tutorial-table {
+    margin: 15px;
+    border-spacing: 3px;
+}
+.tutorial-table tr td {
+    padding: 8px;
+}
+.tutorial-thumb {
+    width: 260px;
+}
 /* Media queries */
 
 @media (max-width: 768px) {

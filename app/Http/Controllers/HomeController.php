@@ -6,6 +6,7 @@ use Illuminate\Auth\Guard;
 
 use App\Notice;
 use App\Resource;
+use App\Tutorial;
 use App\Template;
 
 /**
@@ -111,6 +112,20 @@ class HomeController extends Controller
 			->orderBy("notices.seq")
 			->limit(999)->get();
 
+		$tutorials = Tutorial::select(
+			array(
+				'tutorials.id',
+				'tutorials.seq',
+				'tutorials.thumb',
+				'tutorials.title',
+				'tutorials.url',
+				'tutorials.html',
+				'tutorials.deleted_at'
+			)
+		)
+			->orderBy("tutorials.seq")
+			->limit(999)->get();
+
 		$about = Template::where([ 'name' => self::ABOUT_TEMPLATE, 'deleted_at' => null ])->get()->first();
 		$aboutText = $about->container;
 
@@ -119,7 +134,7 @@ class HomeController extends Controller
 			$loggedIn = true;
 		}
 
-		return view('pages.home', compact('resources', 'titleResource', 'aboutText', 'notices', 'loggedIn'));
+		return view('pages.home', compact('resources', 'titleResource', 'aboutText', 'notices', 'tutorials', 'loggedIn'));
 	}
 
 }

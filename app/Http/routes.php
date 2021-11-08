@@ -5,6 +5,7 @@ Route::model('language', 'App\Language');
 Route::model('template', 'App\Template');
 Route::model('resource', 'App\Resource');
 Route::model('notice', 'App\Notice');
+Route::model('tutorial', 'App\Tutorial');
 Route::model('user', 'App\User');
 Route::pattern('id', '[0-9]+');
 Route::pattern('slug', '[0-9a-z-_]+');
@@ -64,6 +65,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::get('notice/{notice}/edit', 'Admin\NoticeController@edit');
     Route::get('notice/{notice}/delete', 'Admin\NoticeController@delete');
     Route::resource('notice', 'Admin\NoticeController');
+    # Tutorial
+    Route::get('tutorial/data', 'Admin\TutorialController@data');
+    Route::get('tutorial/{tutorial}/show', 'Admin\TutorialController@show');
+    Route::get('tutorial/{tutorial}/edit', 'Admin\TutorialController@edit');
+    Route::get('tutorial/{tutorial}/delete', 'Admin\TutorialController@delete');
+    Route::resource('tutorial', 'Admin\TutorialController');
     # Credits
     Route::get('credit/{resource}/index', 'Admin\CreditController@index');
     Route::get('credit/{id}/edit', 'Admin\CreditController@edit');

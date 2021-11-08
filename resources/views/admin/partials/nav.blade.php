@@ -58,6 +58,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{url('admin/tutorial')}}">
+                        <i class="glyphicon glyphicon-eye-open"></i> Tutorials
+                    </a>
+                </li>
+                <li>
                     <a href="{{url('admin/user')}}">
                         <i class="glyphicon glyphicon-user"></i> Users
                     </a>

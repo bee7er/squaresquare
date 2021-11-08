@@ -32,4 +32,44 @@ Mysql:
 
     We no longer need this as squaresquare domain has gone
 
-    Redirect 301 / https://russetheridge.com/
+    # Redirect 301 / https://russetheridge.com/
+
+# Change to be done 2021/09/30
+
+    Add a new menu option Tutorials after work
+
+    New section entitled Tutorials initially above blog
+
+    Try adding a new Resource called *Tutorials
+
+    The contents allow a hash tag in the title
+
+    Use the hashtag to group contents
+
+    Each hashtag appears as a title (centred) to a section within the Tutorials block
+
+    The contents are a thumb nail (small and left aligned) and description (centred)
+
+Webpack
+
+    For packaging up the js and css resources in Laravel
+
+    Look at webpack.mix.js
+
+    We run the compilation of these with node:
+
+        npm -v      # to see which version is installed
+
+        # Run install of all the dependencies defined in package.json
+        # Note that this adds thousands of files to the project
+        # To stop these from being indexed go to PhpStorm | Preferences | Project | Directories and exclude node_modules
+
+        npm install
+
+        # To run the compile, as shown in the package.json file, run:
+
+        npm run development
+
+        # or
+
+        npm run dev

@@ -17,8 +17,8 @@
         <meta property="og:image" content="http://www.squaresquare.tv/public/img/thumbs/armstrong_hv.png">
         <meta property="og:description" content="Russ Etheridge is a freelance Animator, Director and Designer. Please get in touch for more info and availability!">
 
-		<link href="{{ asset('css/site.css?v4.1') }}" rel="stylesheet">
-        <script src="{{ asset('js/site.js?v4') }}"></script>
+		<link href="{{ asset('css/site.css?v5') }}" rel="stylesheet">
+        <script src="{{ asset('js/site.js?v5') }}"></script>
 
     @yield('styles')
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

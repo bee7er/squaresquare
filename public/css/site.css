@@ -20620,6 +20620,17 @@ body {
     border-bottom: 10px solid black;
 }
 
+.tutorial-table {
+  margin: 15px;
+  border-spacing: 3px;
+}
+.tutorial-table tr td {
+  padding: 8px;
+}
+.tutorial-thumb {
+  width: 260px;
+}
+
 #home {
   margin: 0;
   height: 0;

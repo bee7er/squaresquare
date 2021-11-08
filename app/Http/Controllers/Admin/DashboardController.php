@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Template;
 use App\Notice;
 use App\Resource;
+use App\Tutorial;
 use App\User;
 
 class DashboardController extends AdminController {
@@ -22,6 +23,7 @@ class DashboardController extends AdminController {
         $template = Template::count();
         $resource = Resource::count();
         $notice = Notice::count();
-		return view('admin.dashboard.index',  compact('title','resource','notice','template','users'));
+        $tutorial = Tutorial::count();
+		return view('admin.dashboard.index',  compact('title','resource','notice','tutorial','template','users'));
 	}
 }

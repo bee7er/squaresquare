@@ -1,3 +1,5 @@
+<?php use App\Http\Helpers\TemplateHelper; ?>
+
 @extends('layouts.app')
 @section('title') home @parent @endsection
 
@@ -42,6 +44,46 @@
         <div class="go-top" onclick="scrollToAnchor('top');">
             <div id="goTopHand-work" class="bodymovin-hand" onmouseover="startBodymovinHand(WORK);"
                  onmouseout="stopBodymovinHand(WORK);">
+            </div>
+        </div>
+    @endif
+
+    @if(count($tutorials)>0)
+        <div id="tutorials" class="panel-title">tutorials</div>
+            <div class="row blog-row-container blog-adjust-div" style="max-width: 70%;">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 blog-text">
+                    <table class="tutorial-table">
+                        @foreach($tutorials as $tutorial)
+
+                            <?php $url = ($tutorial->url ? $tutorial->url: "#") ?>
+
+                            <tr style="vertical-align: top;">
+                                <td>
+                                    @if($tutorial->thumb)
+                                        <?php print TemplateHelper::getImageLink($tutorial->url, $tutorial->thumb); ?>
+                                    @else
+                                        &nbsp;
+                                    @endif
+                                </td>
+                                <td>
+                                    @if($tutorial->title)
+                                        <?php print TemplateHelper::getTextLink($tutorial->url, $tutorial->title); ?>
+                                    @else
+                                        &nbsp;
+                                    @endif
+                                    @if($tutorial->html)
+                                        {!! $tutorial->html !!}
+                                    @endif
+                                </td>
+
+                            </tr>
+                        @endforeach
+                    </table>
+                </div>
+            </div>
+        <div class="go-top" onclick="scrollToAnchor('top');">
+            <div id="goTopHand-tutorials" class="bodymovin-hand" onmouseover="startBodymovinHand(TUTORIALS);"
+                 onmouseout="stopBodymovinHand(TUTORIALS);">
             </div>
         </div>
     @endif
@@ -117,6 +159,7 @@
         var ABOUT  = 1;
         var CONTACT = 2;
         var PRESS = 3;
+        var TUTORIALS = 4;
         $(document).ready( function()
         {
             // Setup the goto top hands and store them in an array
@@ -124,6 +167,7 @@
             handAnims[ABOUT] = createBodymovinHand(document.getElementById('goTopHand-about'));
             handAnims[CONTACT] = createBodymovinHand(document.getElementById('goTopHand-contact'));
             handAnims[PRESS] = createBodymovinHand(document.getElementById('goTopHand-press'));
+            handAnims[TUTORIALS] = createBodymovinHand(document.getElementById('goTopHand-tutorials'));
         });
     </script>
 @endsection

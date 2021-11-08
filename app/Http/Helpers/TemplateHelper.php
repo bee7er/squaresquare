@@ -215,4 +215,40 @@ class="col-xs-12 col-sm-12 col-md-12 col-lg-12 template-text" style="background-
 
 		return $html;
 	}
+
+	/**
+	 * Return url link html
+	 *
+	 * @param $url
+	 * @param $linkText
+	 * @return string
+	 */
+	public static function getTextLink($url, $linkText)
+	{
+		if ('' !== $url) {
+			$html = "<a href='$url' target='_blank'>$linkText</a>";
+		} else {
+			$html = $linkText;
+		}
+
+		return $html;
+	}
+
+	/**
+	 * Return url link html
+	 *
+	 * @param $url
+	 * @param $imageUrl
+	 * @return string
+	 */
+	public static function getImageLink($url, $imageUrl)
+	{
+		if ('' !== $url) {
+			$html = "<a href='$url' target='_blank'><img src='$imageUrl' class='tutorial-thumb'></a>";
+		} else {
+			$html = "<img src='$imageUrl' class='tutorial-thumb'>";
+		}
+
+		return $html;
+	}
 }
